@@ -70,7 +70,7 @@
 		if(result==false)
 			return false;
 		try{
-			await $.ajax('/member/username/check');
+			await $.ajax('/member/username/check?username='+value);
 			return true;
 		}catch(err){
 			$msg.text('사용중인 아이디 입니다.');
@@ -109,6 +109,21 @@
 		}
 		return true;
 	}
+	$('#password').on('blur',()=>passwordCheck());
+	$('#password2').on('blur',()=>password2Check());
+	$('#email').on('blur',()=>emailCheck());
+	
+	$('#join').click(async function(){
+		const rl = usernameCheck();
+		const r2 = passwordCheck();
+		const r3 = password2Check();
+		const r4 = emailCheck();
+		
+		const CheckResult = r1 && r2 && r3 && r4;
+		if(CheckResult==true){
+			alert("회원가입성공");
+		}
+	})
 	</script>		
 </body>
 </html>

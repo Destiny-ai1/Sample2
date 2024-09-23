@@ -20,11 +20,13 @@ public class Controller {
 	
 	@GetMapping("/member/username/check")
 	public ResponseEntity<?> 아이디사용확인(@RequestParam String username){
+		if(username==null)
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("아이디를 입력하세요");
 		boolean result = service.아이디사용확인(username);
 		if(result) {
-			return ResponseEntity.status(200).body("사용가능합니다");
+			return ResponseEntity.status(HttpStatus.OK).body("사용가능합니다");
 		}else {
-			return ResponseEntity.status(500).body("사용중이거나중복입니다.");
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("사용중이거나중복입니다.");
 		}
 	}
 	
