@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<button id="send">push</button>
+	<script>
+	 async function aaa(){
+	  try{
+	   const result = await $.ajax('/member/username/check?username=?');
+	   console.log(result);
+	}  catch(err){
+	   console.log(err.responseText);
+	}
+   }
+	$('#send').click(aaa);
+	</script>
+</body>
+</html>

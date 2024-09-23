@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력제한</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" id="username" placeholder='....입력해'><br>
+<input type="text" id="irum" placeholder='이름입력해'><br>
+<script>
+  $('#username').keyup(function(){
+	  const pattern = /[^a-z0-9]/g;
+	  const value = $(this).val();
+	  $(this).val(value.replace(pattern,''));
+  });
+  $('#irum').on("keyup,keydown",function(){
+	  const pattern = /[^ㄱ-ㅎㅏ-ㅣ가-힣]/;
+	  const value = $(this).val();
+	  $(this).val(value.replace(pattern,''));
+  });
+  
+</script>
+</body>
+</html>

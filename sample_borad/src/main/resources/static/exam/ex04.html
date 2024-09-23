@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    // 비동기 함수를 리턴은 promise로 정의한다
+    // promise 의 객체는 then() 메소드를 가진다.
+    const a = 비동기sum(3,4);
+    비동기sum(3,4).then(function(result){
+    	console.log(result);
+    }).catch(function(){
+    	console.log("오류발생");
+    })
+    
+    비동기sum(3,4).then(result=>console.log(result)).catch(()=>console.log("오류발생"));
+  </script>
+</body>
+</html>

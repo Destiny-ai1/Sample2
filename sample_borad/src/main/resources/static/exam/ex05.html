@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+	function 아이디사용여부확인(){
+		
+	}
+	
+	function email사용여부확인(){
+		
+	}
+	
+	function 회원가입(){
+	아이디사용여부확인().then(()=>{
+		email사용여부확인().then(()=>{
+			$('#join-form').submit();
+		}).catch(()=>console.log("사용중인 아이디"))
+	}).catch(()=>console.log("사용중인 email"))
+    }
+	// await~async => 콜백지옥
+	// await 은 promise가 된 결과의 값을 정해질때까지 기다렸다 실행
+	// try~catch 를 ajax와 같이쓸경우 서버에서 성공(200)이 아니면 catch가 실행
+	async function 회원가입2(){
+		try{
+		await 아이디사용여부확인();
+		await email사용여부확인();
+		} catch(err){
+			console.log(err);
+		}
+	}
+</script>
+</body>
+</html>

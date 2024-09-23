@@ -1,0 +1,24 @@
+작업의 방향성 화면출력 및 데이터 출력
+	Modeland view   SSR( 화면을 출력)
+	ResponseEntity  CSR( 데이터 출력)
+
+Member
+01- 아이디사용여부 	username/check   	(CSR)
+02- 회원 가입 		join				(SSR)
+03- 아이디 찾기 	find-id				(SSR)
+04- 로그인 		login				(SSR)
+05- 로그아웃		logout				(SSR)
+
+Board
+01- 루트페이지							(SSR)
+	index.html
+02- 작성								(CSR)
+03- 읽기								(CSR)
+04- 변경								(CSR)
+05- 삭제								(CSR)
+
+Comment
+01- 댓글 추가
+02- 댓글 삭제
+03- 
+04- 
